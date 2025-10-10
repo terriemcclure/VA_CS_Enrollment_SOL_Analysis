@@ -10,6 +10,10 @@ Analysis of Virginia high-school computer science enrollment and its relationshi
 
 ---
 
+📄 [Download Full Research Paper (PDF)](docs/tmcclur-M8_final_project.pdf)
+
+---
+
 ## 🎯 Research Overview
 This project investigates whether participation in **high school Computer Science (CS)** courses correlates with improved **academic outcomes** across both STEM and non-STEM subjects in **Virginia public schools**.
 
