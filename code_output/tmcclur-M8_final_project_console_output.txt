@@ -1,0 +1,332 @@
+=======================================================
+
+Assignment: M8.1: Final Project - Python
+Name: Terrie McClure
+Email: tmcclur@gmu.edu
+GNumber: G00239649
+Course section: Analytics Big Data to Info, AIT 580, Section 011
+
+=======================================================
+C:\Users\Terri\My Drive (terriemcclure@gmail.com)\Terrie\Terrie GitHub\VA_CS_Enrollment_SOL_Analysis\code
+====================info===============================
+
+
+==CRDC_computer_science=====================================================
+
+<class 'pandas.core.frame.DataFrame'>
+Index: 1991 entries, 89475 to 91465
+Data columns (total 17 columns):
+ #   Column                 Non-Null Count  Dtype 
+---  ------                 --------------  ----- 
+ 0   year                   1991 non-null   Int64 
+ 1   lea_state              1991 non-null   string
+ 2   lea_name               1991 non-null   string
+ 3   sch_name               1991 non-null   string
+ 4   sch_compenr_csci_hi    275 non-null    Int64 
+ 5   sch_compenr_csci_am    275 non-null    Int64 
+ 6   sch_compenr_csci_as    275 non-null    Int64 
+ 7   sch_compenr_csci_hp    275 non-null    Int64 
+ 8   sch_compenr_csci_bl    275 non-null    Int64 
+ 9   sch_compenr_csci_wh    275 non-null    Int64 
+ 10  sch_compenr_csci_tr    275 non-null    Int64 
+ 11  tot_compenr_csci_m     275 non-null    Int64 
+ 12  tot_compenr_csci_f     275 non-null    Int64 
+ 13  sch_compenr_csci_idea  275 non-null    Int64 
+ 14  sch_compenr_csci_el    275 non-null    Int64 
+ 15  sch_compclasses_csci   445 non-null    Int64 
+ 16  tot_compenr_csci       275 non-null    Int64 
+dtypes: Int64(14), string(3)
+memory usage: 307.2 KB
+None
+
+==CRDC_enrollment=====================================================
+
+<class 'pandas.core.frame.DataFrame'>
+Index: 1991 entries, 89475 to 91465
+Data columns (total 16 columns):
+ #   Column        Non-Null Count  Dtype 
+---  ------        --------------  ----- 
+ 0   year          1991 non-null   Int64 
+ 1   lea_state     1991 non-null   string
+ 2   lea_name      1991 non-null   string
+ 3   sch_name      1991 non-null   string
+ 4   sch_enr_hi    264 non-null    Int64 
+ 5   sch_enr_am    288 non-null    Int64 
+ 6   sch_enr_as    288 non-null    Int64 
+ 7   sch_enr_hp    291 non-null    Int64 
+ 8   sch_enr_bl    270 non-null    Int64 
+ 9   sch_enr_wh    216 non-null    Int64 
+ 10  sch_enr_tr    278 non-null    Int64 
+ 11  tot_enr_m     1955 non-null   Int64 
+ 12  tot_enr_f     1954 non-null   Int64 
+ 13  sch_enr_idea  221 non-null    Int64 
+ 14  sch_enr_el    263 non-null    Int64 
+ 15  tot_enr       1954 non-null   Int64 
+dtypes: Int64(13), string(3)
+memory usage: 289.7 KB
+None
+
+==CS_merged=====================================================
+
+<class 'pandas.core.frame.DataFrame'>
+RangeIndex: 1991 entries, 0 to 1990
+Data columns (total 41 columns):
+ #   Column                 Non-Null Count  Dtype  
+---  ------                 --------------  -----  
+ 0   year                   1991 non-null   Int64  
+ 1   lea_state              1991 non-null   string 
+ 2   lea_name               1991 non-null   string 
+ 3   sch_name               1991 non-null   string 
+ 4   sch_compenr_csci_hi    275 non-null    Int64  
+ 5   sch_compenr_csci_am    275 non-null    Int64  
+ 6   sch_compenr_csci_as    275 non-null    Int64  
+ 7   sch_compenr_csci_hp    275 non-null    Int64  
+ 8   sch_compenr_csci_bl    275 non-null    Int64  
+ 9   sch_compenr_csci_wh    275 non-null    Int64  
+ 10  sch_compenr_csci_tr    275 non-null    Int64  
+ 11  tot_compenr_csci_m     275 non-null    Int64  
+ 12  tot_compenr_csci_f     275 non-null    Int64  
+ 13  sch_compenr_csci_idea  275 non-null    Int64  
+ 14  sch_compenr_csci_el    275 non-null    Int64  
+ 15  sch_compclasses_csci   445 non-null    Int64  
+ 16  tot_compenr_csci       275 non-null    Int64  
+ 17  sch_enr_hi             264 non-null    Int64  
+ 18  sch_enr_am             288 non-null    Int64  
+ 19  sch_enr_as             288 non-null    Int64  
+ 20  sch_enr_hp             291 non-null    Int64  
+ 21  sch_enr_bl             270 non-null    Int64  
+ 22  sch_enr_wh             216 non-null    Int64  
+ 23  sch_enr_tr             278 non-null    Int64  
+ 24  tot_enr_m              1955 non-null   Int64  
+ 25  tot_enr_f              1954 non-null   Int64  
+ 26  sch_enr_idea           221 non-null    Int64  
+ 27  sch_enr_el             263 non-null    Int64  
+ 28  tot_enr                1954 non-null   Int64  
+ 29  sch_hi_cs_enr_rate     88 non-null     Float64
+ 30  sch_am_cs_enr_rate     91 non-null     Float64
+ 31  sch_as_cs_enr_rate     93 non-null     Float64
+ 32  sch_hp_cs_enr_rate     93 non-null     Float64
+ 33  sch_bl_cs_enr_rate     92 non-null     Float64
+ 34  sch_wh_cs_enr_rate     72 non-null     Float64
+ 35  sch_tr_cs_enr_rate     92 non-null     Float64
+ 36  tot_m_cs_enr_rate      275 non-null    Float64
+ 37  tot_f_cs_enr_rate      275 non-null    Float64
+ 38  sch_idea_cs_enr_rate   70 non-null     Float64
+ 39  sch_el_cs_enr_rate     87 non-null     Float64
+ 40  tot_cs_enr_rate        275 non-null    Float64
+dtypes: Float64(12), Int64(26), string(3)
+memory usage: 711.8 KB
+None
+====================info===============================
+
+
+==SOL_assessments=====================================================
+
+<class 'pandas.core.frame.DataFrame'>
+Index: 1533 entries, 0 to 2151
+Data columns (total 20 columns):
+ #   Column                    Non-Null Count  Dtype 
+---  ------                    --------------  ----- 
+ 0   school_year               1533 non-null   string
+ 1   division_number           1533 non-null   string
+ 2   division_name             1533 non-null   string
+ 3   school_number             1533 non-null   string
+ 4   school_name               1533 non-null   string
+ 5   subject                   1533 non-null   string
+ 6   test_level                1533 non-null   string
+ 7   test_source               1533 non-null   string
+ 8   pass_advanced_count       1533 non-null   Int64 
+ 9   pass_proficient_count     1533 non-null   Int64 
+ 10  fail_count                1533 non-null   Int64 
+ 11  pass_count                1533 non-null   Int64 
+ 12  total_count               1533 non-null   Int64 
+ 13  pass_advanced_rate        1533 non-null   string
+ 14  pass_proficient_rate      1533 non-null   string
+ 15  fail_rate                 1533 non-null   string
+ 16  pass_rate                 1533 non-null   string
+ 17  average_sol_scaled_score  1533 non-null   string
+ 18  school_level              1533 non-null   string
+ 19  year                      1533 non-null   Int64 
+dtypes: Int64(6), string(14)
+memory usage: 260.5 KB
+None
+====================info===============================
+
+
+==SOL_assessments=====================================================
+
+<class 'pandas.core.frame.DataFrame'>
+Index: 2995 entries, 0 to 4229
+Data columns (total 21 columns):
+ #   Column                    Non-Null Count  Dtype 
+---  ------                    --------------  ----- 
+ 0   school_year               2995 non-null   string
+ 1   division_number           2995 non-null   string
+ 2   division_name             2995 non-null   string
+ 3   school_number             2995 non-null   string
+ 4   school_name               2995 non-null   string
+ 5   subject                   2995 non-null   string
+ 6   gender                    2995 non-null   string
+ 7   test_level                2995 non-null   string
+ 8   test_source               2995 non-null   string
+ 9   pass_advanced_count       2995 non-null   Int64 
+ 10  pass_proficient_count     2995 non-null   Int64 
+ 11  fail_count                2995 non-null   Int64 
+ 12  pass_count                2995 non-null   Int64 
+ 13  total_count               2995 non-null   Int64 
+ 14  pass_advanced_rate        2995 non-null   string
+ 15  pass_proficient_rate      2995 non-null   string
+ 16  fail_rate                 2995 non-null   string
+ 17  pass_rate                 2995 non-null   string
+ 18  average_sol_scaled_score  2995 non-null   string
+ 19  school_level              2995 non-null   string
+ 20  year                      2995 non-null   Int64 
+dtypes: Int64(6), string(15)
+memory usage: 532.3 KB
+None
+====================info===============================
+
+
+==SOL_assessments=====================================================
+
+<class 'pandas.core.frame.DataFrame'>
+Index: 5202 entries, 3 to 10875
+Data columns (total 21 columns):
+ #   Column                    Non-Null Count  Dtype 
+---  ------                    --------------  ----- 
+ 0   school_year               5202 non-null   string
+ 1   division_number           5202 non-null   string
+ 2   division_name             5202 non-null   string
+ 3   school_number             5202 non-null   string
+ 4   school_name               5202 non-null   string
+ 5   subject                   5202 non-null   string
+ 6   race                      5202 non-null   string
+ 7   test_level                5202 non-null   string
+ 8   test_source               5202 non-null   string
+ 9   pass_advanced_count       5202 non-null   Int64 
+ 10  pass_proficient_count     5202 non-null   Int64 
+ 11  fail_count                5202 non-null   Int64 
+ 12  pass_count                5202 non-null   Int64 
+ 13  total_count               5202 non-null   Int64 
+ 14  pass_advanced_rate        5202 non-null   string
+ 15  pass_proficient_rate      5202 non-null   string
+ 16  fail_rate                 5202 non-null   string
+ 17  pass_rate                 5202 non-null   string
+ 18  average_sol_scaled_score  5202 non-null   string
+ 19  school_level              5202 non-null   string
+ 20  year                      5202 non-null   Int64 
+dtypes: Int64(6), string(15)
+memory usage: 924.6 KB
+None
+====================cleaned info===============================
+
+
+==SOL_CS=====================================================
+
+<class 'pandas.core.frame.DataFrame'>
+RangeIndex: 329 entries, 0 to 328
+Data columns (total 25 columns):
+ #   Column                        Non-Null Count  Dtype  
+---  ------                        --------------  -----  
+ 0   school_year                   329 non-null    string 
+ 1   division_name                 329 non-null    string 
+ 2   school_name                   329 non-null    string 
+ 3   total_count                   329 non-null    Int64  
+ 4   total_count_stem              329 non-null    Int64  
+ 5   total_count_non_stem          329 non-null    Int64  
+ 6   pass_advanced_count           329 non-null    Int64  
+ 7   pass_advanced_count_stem      329 non-null    Int64  
+ 8   pass_advanced_count_non_stem  329 non-null    Int64  
+ 9   pass_proficient_count         329 non-null    Int64  
+ 10  fail_count                    329 non-null    Int64  
+ 11  pass_count                    329 non-null    Int64  
+ 12  pass_count_stem               329 non-null    Int64  
+ 13  pass_count_non_stem           329 non-null    Int64  
+ 14  year                          329 non-null    Int64  
+ 15  test_level                    329 non-null    string 
+ 16  test_source                   329 non-null    string 
+ 17  school_level                  329 non-null    string 
+ 18  CS_enrollment_rate            251 non-null    Float64
+ 19  pass_advanced_rate            329 non-null    Float64
+ 20  pass_advanced_rate_stem       329 non-null    Float64
+ 21  pass_advanced_rate_non_stem   329 non-null    Float64
+ 22  pass_rate                     329 non-null    Float64
+ 23  pass_rate_stem                329 non-null    Float64
+ 24  pass_rate_non_stem            329 non-null    Float64
+dtypes: Float64(7), Int64(12), string(6)
+memory usage: 70.5 KB
+None
+
+==SOL_CS_by_gender=====================================================
+
+<class 'pandas.core.frame.DataFrame'>
+RangeIndex: 655 entries, 0 to 654
+Data columns (total 26 columns):
+ #   Column                        Non-Null Count  Dtype  
+---  ------                        --------------  -----  
+ 0   school_year                   655 non-null    string 
+ 1   division_name                 655 non-null    string 
+ 2   school_name                   655 non-null    string 
+ 3   gender                        655 non-null    string 
+ 4   total_count                   655 non-null    Int64  
+ 5   total_count_stem              654 non-null    Int64  
+ 6   total_count_non_stem          650 non-null    Int64  
+ 7   pass_advanced_count           655 non-null    Int64  
+ 8   pass_advanced_count_stem      654 non-null    Int64  
+ 9   pass_advanced_count_non_stem  650 non-null    Int64  
+ 10  pass_proficient_count         655 non-null    Int64  
+ 11  fail_count                    655 non-null    Int64  
+ 12  pass_count                    655 non-null    Int64  
+ 13  pass_count_stem               654 non-null    Int64  
+ 14  pass_count_non_stem           650 non-null    Int64  
+ 15  year                          655 non-null    Int64  
+ 16  test_level                    655 non-null    string 
+ 17  test_source                   655 non-null    string 
+ 18  school_level                  655 non-null    string 
+ 19  CS_enrollment_rate            501 non-null    Float64
+ 20  pass_advanced_rate            655 non-null    Float64
+ 21  pass_advanced_rate_stem       654 non-null    Float64
+ 22  pass_advanced_rate_non_stem   650 non-null    Float64
+ 23  pass_rate                     655 non-null    Float64
+ 24  pass_rate_stem                654 non-null    Float64
+ 25  pass_rate_non_stem            650 non-null    Float64
+dtypes: Float64(7), Int64(12), string(7)
+memory usage: 145.3 KB
+None
+
+==SOL_CS_by_race=====================================================
+
+<class 'pandas.core.frame.DataFrame'>
+RangeIndex: 1221 entries, 0 to 1220
+Data columns (total 26 columns):
+ #   Column                        Non-Null Count  Dtype  
+---  ------                        --------------  -----  
+ 0   school_year                   1221 non-null   string 
+ 1   division_name                 1221 non-null   string 
+ 2   school_name                   1221 non-null   string 
+ 3   race                          1221 non-null   string 
+ 4   total_count                   1221 non-null   Int64  
+ 5   total_count_stem              1205 non-null   Int64  
+ 6   total_count_non_stem          1168 non-null   Int64  
+ 7   pass_advanced_count           1221 non-null   Int64  
+ 8   pass_advanced_count_stem      1205 non-null   Int64  
+ 9   pass_advanced_count_non_stem  1168 non-null   Int64  
+ 10  pass_proficient_count         1221 non-null   Int64  
+ 11  fail_count                    1221 non-null   Int64  
+ 12  pass_count                    1221 non-null   Int64  
+ 13  pass_count_stem               1205 non-null   Int64  
+ 14  pass_count_non_stem           1168 non-null   Int64  
+ 15  year                          1221 non-null   Int64  
+ 16  test_level                    1221 non-null   string 
+ 17  test_source                   1221 non-null   string 
+ 18  school_level                  1221 non-null   string 
+ 19  CS_enrollment_rate            382 non-null    Float64
+ 20  pass_advanced_rate            1221 non-null   Float64
+ 21  pass_advanced_rate_stem       1205 non-null   Float64
+ 22  pass_advanced_rate_non_stem   1168 non-null   Float64
+ 23  pass_rate                     1221 non-null   Float64
+ 24  pass_rate_stem                1205 non-null   Float64
+ 25  pass_rate_non_stem            1168 non-null   Float64
+dtypes: Float64(7), Int64(12), string(7)
+memory usage: 270.8 KB
+None
