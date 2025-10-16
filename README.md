@@ -50,23 +50,22 @@ The analysis integrates **Virginia Department of Education (VDOE)** Standards of
 - **Data Cleaning:** Filtered school-year data, standardized school codes, merged SOL + CRDC datasets
 - **Analysis:**  
   - Correlation between CS enrollment and SOL pass rates  
-  - Regression models to test predictors (CS enrollment, gender, school type)  
+  - Regression models to test predictors (CS enrollment, gender, race)  
   - Visualization of trends using Seaborn  
 
 ---
 
-## 📈 Preliminary Findings
+## 📈 Findings
 
-- Schools with higher CS enrollment show **higher overall SOL pass rates**, particularly in math and science.
-- Female participation in CS is low but strongly associated with **smaller achievement gaps**.
-- Data suggests **broad academic benefits** of CS participation beyond traditional STEM subjects.
+- Schools with higher CS enrollment show **higher overall SOL pass rates**
+- Data suggests **broad academic benefits** of CS participation beyond traditional STEM subjects across demographics.
 
 ---
 
 ## 🧾 Citation (Turabian Author-Date)
 
-McClure, Terrie. 2025. *High School Computer Science Enrollment and Academic Outcomes in Virginia: A Data-Driven Study.* M.S. project, George Mason University.  
-Data sources: VDOE (2023); U.S. Department of Education, CRDC (2021–22).
+McClure, Terrie. 2025. *Computer Science course enrollment and student achievement across subject areas by demographic groups.* M.S. project, George Mason University.  
+Data sources: VDOE (2021-2022); U.S. Department of Education, CRDC (2021–22).
 
 ---
 
@@ -75,17 +74,12 @@ Data sources: VDOE (2023); U.S. Department of Education, CRDC (2021–22).
 ```
 VA_CS_Enrollment_SOL_Analysis/
 │
-├── data/
-│   ├── raw/
-│   └── processed/
-├── notebooks/
+├── code/
+├── code_output/
 ├── scripts/
-├── results/
-│   ├── figures/
-│   ├── tables/
-│   └── regression_output.txt
-├── poster/
-│   └── GMU_OSCAR_Poster_TMcClure.pdf
+├── docs/
+├── raw_data/
+
 └── README.md
 ```
 
