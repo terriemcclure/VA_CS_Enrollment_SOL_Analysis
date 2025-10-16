@@ -62,7 +62,7 @@ The analysis integrates **Virginia Department of Education (VDOE)** Standards of
 
 ---
 
-## 🧾 Citation (Turabian Author-Date)
+## 🧾 Citation
 
 McClure, Terrie. 2025. *Computer Science course enrollment and student achievement across subject areas by demographic groups.* M.S. project, George Mason University.  
 Data sources: VDOE (2021-2022); U.S. Department of Education, CRDC (2021–22).
