@@ -700,6 +700,29 @@ def _plot_panels(df, hue=None, title_suffix="", savepath=None, palette=None):
 
 ##########################################################################################
 
+# #################################################
+# remove outliers - function to remove outliers with Z-score >= 3 (to match AWS Glue DataBrew default profile method)
+# ################################################
+
+def remove_outliers_zscore(df, cols, z=3.0, by=None):
+    """
+    Drop rows where ANY of `cols` has |z| > z.
+    If `by` is provided (e.g., ['gender'] or ['race']), compute z within each subgroup.
+    """
+    def _mask(g):
+        keep = pd.Series(True, index=g.index)
+        for c in cols:
+            x = g[c].astype(float)
+            mu = x.mean()
+            sd = x.std(ddof=0)  # population SD; close to what profilers typically use
+            if pd.isna(sd) or sd == 0:
+                continue
+            zscores = (x - mu) / sd
+            keep &= zscores.abs() <= z
+        return g.loc[keep]
+    return df.groupby(by, group_keys=False, dropna=False).apply(_mask) if by else _mask(df)
+
+
 # ===========================================
 # SOL_CS (no subgroup)
 # ===========================================
@@ -805,4 +828,29 @@ SOL_CS_by_gender_stats  = _plot_panels(SOL_CS_by_gender_df,  hue="gender",    ti
                              )
 SOL_CS_by_race_stats    = _plot_panels(SOL_CS_by_race_df,    hue="race",      title_suffix=" (High Schools, by Race)",
                              savepath="../code_output/fig_SOL_CS_by_race_panels.png")
+
+# ###################################
+# Remove outliers and plot again
+# #################################
+
+rate_cols = ["CS_enrollment_rate"] + [y for y,_,_ in PANELS]
+
+# No subgroup
+SOL_CS_df_no_outliers = remove_outliers_zscore(SOL_CS_df, rate_cols, z=3.0)
+
+# By gender (z computed within each gender, like separate profiles)
+SOL_CS_by_gender_df_no_outliers = remove_outliers_zscore(SOL_CS_by_gender_df, rate_cols, z=3.0, by=["gender"])
+
+# By race
+SOL_CS_by_race_df_no_outliers = remove_outliers_zscore(SOL_CS_by_race_df, rate_cols, z=3.0, by=["race"])
+
+# plot with no outliers
+SOL_CS__no_outliers_stats = _plot_panels(SOL_CS_df_no_outliers, hue=None,        title_suffix=" (High Schools)",
+                             savepath="../code_output/fig_SOL_CS_no_outliers_panels.png")
+SOL_CS_by_gender_no_outliers_stats  = _plot_panels(SOL_CS_by_gender_df_no_outliers,  hue="gender",    title_suffix=" (High Schools, by Gender)",
+                             savepath="../code_output/fig_SOL_CS_by_gender_no_outliers_panels.png",
+                             palette=GENDER_PALETTE,   # <- pink for F, blue for M palette=GENDER_PALETTE,   # <- pink for F, blue for M
+                             )
+SOL_CS_by_race_no_outliers_stats    = _plot_panels(SOL_CS_by_race_df_no_outliers,    hue="race",      title_suffix=" (High Schools, by Race)",
+                             savepath="../code_output/fig_SOL_CS_by_race_no_outliers_panels.png")
 
